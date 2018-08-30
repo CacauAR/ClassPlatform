@@ -1,0 +1,32 @@
+<%= form_with(model: arquife, local: true) do |form| %>
+  <% if arquife.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(arquife.errors.count, "error") %> prohibited this arquife from being saved:</h2>
+
+      <ul>
+      <% arquife.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :path %>
+    <%= form.text_field :path %>
+  </div>
+
+  <div class="field">
+    <%= form.label :classe_id %>
+    <%= form.text_field :classe_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.text_field :course_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
